@@ -1,0 +1,15 @@
+Task 13 Answers:
+
+1. Branch handling:
+- 'ratio' (1.5) originally falls into the 'else' branch ('an unknown type: Double'). Adding 'is Double' handles it explicitly.
+
+2. Behavior with 'as String':
+- For 'username', 'as String' works fine ('Dilnoza').
+- For 'volume' (Int) or 'ratio' (Double), 'as String' throws a ClassCastException.
+- For 'theme' (null), 'as String' throws a NullPointerException.
+
+3. Difference between 'as String' and 'as? String':
+- Using 'as? String' safely evaluates to null for invalid types or null values without throwing an exception.
+
+4. Extension function typeName():
+- 'typeName()' can be called on any non-null value (like 5 or "x") because 'Any' is the root class of all non-nullable types in Kotlin.

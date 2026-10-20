@@ -1,0 +1,12 @@
+Task 8 Answers:
+
+1. Inline scope on properties:
+- 'Double.withVat' is marked inline as a whole property.
+- 'String.wordCount' marks only its getter as inline.
+- Both work identically for read-only properties because there is no setter.
+
+2. Why properties with backing fields cannot be inline:
+A property with a backing field allocates memory to store actual state. Inlining works by copying the getter/setter byte code directly to call sites, which is impossible for memory-backed fields.
+
+3. Kilobytes property output:
+Entering 5 prints: 5 KB = 5120 bytes.

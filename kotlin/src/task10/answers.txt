@@ -1,0 +1,10 @@
+Task 10 Answers:
+
+1. Rejected input lines:
+Lines 'bad' and 'Bobur x' are rejected by the validation condition 'if (parts.size != 2 || grade == null)' because they fail to provide a valid integer grade.
+
+2. Full type for Gradebook:
+Gradebook stands for MutableMap<String, MutableList<Int>>.
+
+3. Replacing Gradebook with the raw type:
+Replacing Gradebook with MutableMap<String, MutableList<Int>> in addGrade works without any issues. This confirms that typealias is only a compiler nickname and does not create a new standalone type.

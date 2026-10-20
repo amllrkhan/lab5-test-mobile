@@ -1,0 +1,16 @@
+Task 15 Answers:
+
+1. Return type Nothing for runCalculator:
+- 'runCalculator' returns Nothing because it runs an infinite while(true) loop that only terminates by calling exitProcess(0). It never returns normally.
+
+2. Unreachable line:
+- The line 'println("This line is never reached")' in main() is highlighted as unreachable code because runCalculator() never completes.
+
+3. Type of when expression in discountFor:
+- When branches evaluate to Int (20), Int (10), and Nothing (fail()). The common supertype of Int and Nothing is Int, so the whole expression returns Int.
+
+4. Why List<Nothing> works with List<String> and List<Int>:
+- 'Nothing' is a subtype of every type in Kotlin. Because 'List<out T>' is covariant, 'List<Nothing>' is a subtype of List<String>, List<Int>, or any other generic list.
+
+5. Added new commands:
+- Added 'reset' (sets total to 0) and 'mul N' (multiplies total by N).

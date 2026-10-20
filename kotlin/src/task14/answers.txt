@@ -1,0 +1,18 @@
+Task 14 Answers:
+
+1. Input results:
+- '20': Prints 'You will be 21 next year'.
+- 'abc': Throws exception in fail(), caught in main() as 'Input error: Age must be a whole number'.
+- '-5': Throws exception in fail(), caught in main() as 'Input error: Age cannot be negative'.
+
+2. Inferred type of age:
+- The type of 'age' is Int (non-nullable) because fail() returns Nothing. The compiler knows the right side of '?:' will never complete normally, so the null case is impossible after this line.
+
+3. Changing Nothing to Unit:
+- If fail() returns Unit, the type of age becomes Int? (the common supertype of Int and Unit). This causes compiler errors when performing 'age < 0' or 'age + 1'.
+
+4. IDE unreachable code warning:
+- Placing code after fail() causes the IDE to grey out the lines as 'Unreachable code', confirming that execution stops at fail().
+
+5. Return type of TODO() and error():
+- Both TODO() and error() in the Kotlin standard library return Nothing.

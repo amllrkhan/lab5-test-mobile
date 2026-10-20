@@ -1,0 +1,10 @@
+Task 9 Answers:
+
+1. Error and fix:
+Changing 'private' to 'internal' still leaves an error because public inline functions cannot use internal API without explicit exposure. Adding @PublishedApi to internal var debugEnabled makes the program compile.
+
+2. Message evaluation behavior:
+The text '(building the report...)' is printed ONLY when debug logging is enabled ('yes'). This happens because the message is passed as a lambda, which is evaluated lazily only inside the 'if (debugEnabled)' branch.
+
+3. Difference when debug takes 'message: String':
+When changing debug to take a direct String parameter, '(building the report...)' is printed BEFORE entering debug(), regardless of whether debugEnabled is true or false. This is because the argument expression must be evaluated before the function call.

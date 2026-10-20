@@ -1,0 +1,17 @@
+Question 1: How many attempts are reported when entering abc, 200, and 35? Why does the lambda return null for the first two answers?
+
+Answer:
+It reports 3 attempts. The lambda returns null for "abc" because it cannot be converted to an integer (toIntOrNull() returns null), and for "200" because it fails the range condition 0..120 (takeIf returns null).
+
+Question 2: What do you see in Kotlin Bytecode (Decompiled) with and without inline?
+
+Answer:
+
+With inline: There is no call to ask(...) inside main, and no Ref.IntRef object. The function body and lambda code are pasted directly into main.
+
+Without inline: A call to ask(...) appears, along with Ref.IntRef. The Ref.IntRef object is required because non-inline lambdas create an anonymous object in memory, and mutating a local variable (attempts) from inside a closure requires a reference wrapper.
+
+Question 3: What to answer a friend who marks a 200-line function inline "because inline is faster"?
+
+Answer:
+Inlining only pays off for small functions taking lambda parameters by eliminating object allocations and function call overhead. Inlining a massive 200-line function duplicates its entire code at every call site, which inflates the application binary size and degrades CPU instruction cache efficiency.

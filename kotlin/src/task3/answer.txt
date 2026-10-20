@@ -1,0 +1,19 @@
+Question 1: Why does findFirst print one line and findAll several lines? What does return@forEach do?
+
+Answer:
+findFirst uses an un-qualified return (non-local return), which exits the entire findFirst function as soon as a match is found. findAll uses return@forEach (qualified return), which skips only the current iteration of the lambda (acting like continue in a loop).
+
+Question 2: After a match, which line is never printed, and why is 'Search finished' still printed?
+
+Answer:
+The line println("No contact contains '$query'") is never printed because the non-local return exits findFirst early. "Search finished" is printed because it is located inside main(), which continues running after findFirst() completes.
+
+Question 3: What is different between your non-inline each and standard forEach regarding return?
+
+Answer:
+A bare return is forbidden inside a lambda passed to a non-inline function like each because control flow cannot jump out of an anonymous class frame to an outer function frame. Marking each as inline allows non-local return.
+
+Question 4: Complete the rule in one sentence: A bare return is allowed in a lambda when...
+
+Answer:
+A bare return is allowed in a lambda when the function taking that lambda is marked inline.

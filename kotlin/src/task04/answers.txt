@@ -1,0 +1,11 @@
+Task 4 Answers:
+
+1. Red parameter and modifier:
+The compiler highlights the parameter 'action' and suggests adding the 'crossinline' modifier.
+
+2. Behavior with inputs 2 and 9:
+- Input '2': Prints 'Goodbye!'.
+- Input '9': Prints 'Unknown command'.
+
+3. Why return is forbidden in command { println("Hello!"); return }:
+In Task 3, the inline lambda was executed directly inside the inline function body. In Task 4, the lambda is passed inside an anonymous object (Runnable), which might be executed later or in another execution context. Allowing a non-local return here could break control flow, so crossinline explicitly disallows non-local returns.

@@ -1,0 +1,7 @@
+Task 11 Answers:
+
+1. Compatibility of lambda and Validator:
+Both compile because a typealias is fully interchangeable with its underlying type (String) -> Boolean.
+
+2. Why roomDemo compiles with wrong units:
+Passing 'feet' to 'describeRoom(width: Meters)' compiles because both Meters and Feet are typealiases for Double. To prevent such mistakes, value classes (@JvmInline value class Meters(val value: Double)) should be used instead.

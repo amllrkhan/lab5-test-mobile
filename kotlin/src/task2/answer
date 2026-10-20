@@ -1,0 +1,23 @@
+Question 1: Which parameter triggers a compiler error initially and what does it suggest?
+
+Answer:
+The parameter reminder causes a compiler error because it is being passed to pending.add(...). The compiler suggests adding the noinline modifier to reminder.
+
+Question 2: What is printed when running the fixed code with "Write report"?
+
+Answer:
+
+Task name: Write report
+Saved: Write report
+Pending reminders: 1
+Reminder: finish 'Write report'
+
+Question 3: What happens when adding pending.add(save)? Why may save be called, but not stored?
+
+Answer:
+The compiler gives an error stating that an inline parameter save cannot be stored or passed around as an object reference. save can be called directly because its body is pasted into addTask, but it cannot be saved into a list because no function object is created for it.
+
+Question 4: When pending.forEach { it() } runs, where does the code of reminder live? What would be missing if it were inlined?
+
+Answer:
+The code lives inside an instance of an anonymous function object (Function0). If it were inlined, there would be no object reference to store in pending or execute later.

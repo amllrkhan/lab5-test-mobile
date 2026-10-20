@@ -1,0 +1,17 @@
+Task 12 Answers:
+
+1. Default behavior without overrides:
+println(a) prints default class reference representation (e.g. task12.Contact@1b6d3586).
+a == b returns false because default equals compares reference identity (===).
+
+2. Behavior with overrides:
+println(a) prints 'Ali (991234567)'.
+a == b returns true because equals is overridden to compare phone numbers.
+a === b returns false because they are different object instances in memory.
+book contains b returns true because hashCode matches the phone property.
+
+3. Deleting hashCode:
+If hashCode is deleted, 'b in book' returns false because HashSet looks in the wrong hash bucket. hashCode must always agree with equals.
+
+4. Why equals takes Any?:
+equals takes Any? because it is defined in the root class Any. Using 'other is Contact' handles null safety automatically by evaluating to false when other is null.

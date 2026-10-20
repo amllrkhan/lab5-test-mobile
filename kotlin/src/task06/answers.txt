@@ -1,0 +1,12 @@
+Task 6 Answers:
+
+1. Values check:
+- Inputs: 25, 1.75, true, Samarkand -> age=25, height=1.75, subscribed=true, city=Samarkand
+- Inputs: x, 1,75, yes, <empty> -> age=null, height=null, subscribed=null, city=
+- 'age', 'height', and 'subscribed' are null because parsing fails. 'city' is not null because any text (including an empty line) is valid for String.
+
+2. Removing reified:
+Produces two compilation errors. The function uses 'T' at 'T::class' (reflection) and 'as T?' (type cast).
+
+3. Calling readValue<Char>("City: "):
+It fails at RUNTIME when executing the line 'error("Unsupported type Char")' inside the when block.

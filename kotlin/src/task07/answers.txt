@@ -1,0 +1,11 @@
+Task 7 Answers:
+
+1. Token placement and type parsing:
+- Whole numbers go to Ints, decimals to Doubles, text to Words, and booleans (true/false) to Booleans.
+- '7' becomes an Int (and not a Double) because token.toIntOrNull() appears first in parseToken() and succeeds before toDoubleOrNull() is evaluated.
+
+2. Meaning of 'erased type':
+'Erased type' means that generic type parameters are removed by the compiler at runtime due to JVM Type Erasure. Without 'reified', the expression 'item is T' cannot be evaluated at runtime because T is erased to Object.
+
+3. Standard library 'filterIsInstance':
+Replacing items.onlyOfType<Int>() with items.filterIsInstance<Int>() produces the exact same output. The declaration of filterIsInstance uses the modifiers 'inline' and 'reified'.

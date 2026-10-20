@@ -1,0 +1,20 @@
+Task 5 Answers:
+
+1. Program outputs:
+- Run 1 (10, abc, 25.5, done):
+  'abc' is not a number, skipped
+  Items: 2, total: 35.5
+
+- Run 2 (10, abc, 20000, 5):
+  'abc' is not a number, skipped
+  Price 20000.0 is too large, stopping
+  Items: 1, total: 10.0
+  The input '5' is never read because the loop breaks on 20000.
+
+2. Jump locations:
+- 'continue' is inside the lambda passed to 'run'. It skips to the next iteration of the outer while loop.
+- 'break' is inside the lambda passed to 'let'. It exits the outer while loop entirely.
+
+3. Difference between run and non-inline orSkip:
+A non-inline function cannot use break or continue inside its lambdas because control jumps across function boundaries require inlining.
+Section 'Break and continue' of Lecture 11 explains that inlining substitutes the code directly into the loop body, enabling non-local break and continue.
